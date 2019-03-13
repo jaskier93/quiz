@@ -1,16 +1,16 @@
 package demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Test {
-@Id
-@GeneratedValue(strategy= GenerationType.AUTO)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
     public List<Question> getQuestionList() {
         return questionList;
     }
@@ -19,7 +19,8 @@ public class Test {
         this.questionList = questionList;
     }
 
-    private List<Question> questionList=new ArrayList<>();
+    @OneToMany(mappedBy = "test")
+    private List<Question> questionList = new ArrayList<>();
 
     private String name;
 

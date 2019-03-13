@@ -1,10 +1,21 @@
 package demo.model;
 
-public class Question {
-private String content;
-private boolean correct;
+import javax.persistence.*;
 
-private Test test;
+@Entity
+public class Question {
+
+    private String content;
+    private boolean correct;
+
+    public Question() {
+    }
+
+    @ManyToOne
+    private Test test;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     public Test getTest() {
         return test;
