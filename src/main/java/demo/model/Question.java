@@ -8,6 +8,10 @@ public class Question {
     private String content;
     private boolean correct;
 
+    public Question(String content) {
+        this.content = content;
+    }
+
     public Question() {
     }
 

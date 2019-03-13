@@ -7,6 +7,8 @@ import java.util.List;
 @Entity
 public class Test {
 
+    public Test() {}
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -19,7 +21,7 @@ public class Test {
         this.questionList = questionList;
     }
 
-    @OneToMany(mappedBy = "test")
+    @OneToMany(mappedBy = "test", cascade = CascadeType.ALL)
     private List<Question> questionList = new ArrayList<>();
 
     private String name;
@@ -34,6 +36,11 @@ public class Test {
 
     public Test(String name) {
         this.name = name;
+    }
+
+    public void addQuestion(Question question) {
+        question.setTest(this);
+        questionList.add(question);
     }
 
 }
