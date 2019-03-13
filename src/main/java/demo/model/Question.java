@@ -8,8 +8,26 @@ public class Question {
     private String content;
     private boolean correct;
 
+    public Question(boolean correct) {
+        this.correct = correct;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Question(String content) {
         this.content = content;
+    }
+
+    public Question(String content, boolean correct, Test test) {
+        this.content = content;
+        this.correct = correct;
+        this.test = test;
     }
 
     public Question() {

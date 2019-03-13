@@ -1,8 +1,8 @@
 package demo.data;
 
+import demo.controller.TestRepository;
 import demo.model.Question;
 import demo.model.Test;
-import demo.repository.TestRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class SpringExampleData implements CommandLineRunner {
 
     @Autowired
-    private TestRespository testRespository;
+    private TestRepository testRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -21,7 +21,7 @@ public class SpringExampleData implements CommandLineRunner {
         test.addQuestion((new Question("Czy  Java ma interfejsy", true)));
         test.addQuestion((new Question("Czy Java ma Klasę integer?", false)));
         test.addQuestion((new Question("Czy Java ma destruktor?", false)));
-        testRespository.save(test);
+        testRepository.save(test);
     }
 
 }
