@@ -36,7 +36,7 @@ public class Question {
     @ManyToOne
     private Test test;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     public Test getTest() {

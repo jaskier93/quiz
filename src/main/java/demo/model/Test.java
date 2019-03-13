@@ -10,7 +10,7 @@ public class Test {
     public Test() {}
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     public List<Question> getQuestionList() {

@@ -49,13 +49,7 @@ public class TestController {
             modelMap.put("message", "Koniec gry! Twoja liczba punktów to: "
                     + user.getNumberOfPoints());
         }
-
         return "test";
-    }
+   }
 
 }
-
-
-
-
-
